@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.smartphone.imjx.topfloatview.MainActivity">
+
+    <com.smartphone.imjx.topfloatview.MyScrollview
+        android:id="@+id/scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e2e3e5"
+            android:orientation="vertical">
+
+            <com.smartphone.imjx.topfloatview.ImageViewpagerView
+                android:id="@+id/bannerview"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/banner" />
+
+            <LinearLayout
+                android:id="@+id/tabLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_topfloat_height"
+                android:layout_below="@id/bannerview"
+                android:background="#d4f5F4"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="可以横向滚动的滚动控件 可以横向滚动的滚动控件 可以横向滚动的滚动控件 可以横向滚动的滚动控件 可以横向滚动的滚动控件 "
+                        android:textSize="25dp" />
+                </HorizontalScrollView>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+android:text="可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n可以纵向滚动的滚动控件  \r\n包含了网络加载的banner \r\n"                android:textSize="20dp" />
+        </LinearLayout>
+
+
+    </com.smartphone.imjx.topfloatview.MyScrollview>
+
+    <RelativeLayout
+        android:id="@+id/topfloatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_topfloat_height"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+    </RelativeLayout>
+</RelativeLayout>
