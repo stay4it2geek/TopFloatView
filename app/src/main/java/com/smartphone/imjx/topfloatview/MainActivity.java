@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * scrollview 顶部悬浮
  */
-public class MainActivity extends AppCompatActivity implements ScrollViewListener {
+public class MainActivity extends AppCompatActivity implements ScrollViewListener, ImageViewpagerView.OnItemClickListener {
 
     //屏幕顶部悬浮相对性布局
     private RelativeLayout topFloatRelativelayout;
@@ -37,17 +38,20 @@ public class MainActivity extends AppCompatActivity implements ScrollViewListene
 
         bannerview = (ImageViewpagerView) findViewById(R.id.bannerview);
         topFloatRelativelayout = (RelativeLayout) findViewById(R.id.topfloatLayout);
+        List<String> imgUrls = new ArrayList<>();
         List<String> urls = new ArrayList<>();
+        imgUrls.add("http://pic2.ooopic.com/11/65/54/78bOOOPICca_1024.jpg");
+        imgUrls.add(" http://pic.58pic.com/58pic/17/47/54/86k58PICcip_1024.jpg");
         urls.add("http://pic2.ooopic.com/11/65/54/78bOOOPICca_1024.jpg");
         urls.add(" http://pic.58pic.com/58pic/17/47/54/86k58PICcip_1024.jpg");
-        ((ImageViewpagerView) findViewById(R.id.bannerview)).setImagesUrl(urls);
+        ((ImageViewpagerView) findViewById(R.id.bannerview)).setImagesUrl(imgUrls,urls);
+        ((ImageViewpagerView) findViewById(R.id.bannerview)).setOnItemClickListener(this);
         mScrollView = (MyScrollview) findViewById(R.id.scrollview);
         mScrollView.setScrollViewListener(this);
     }
 
     @Override
     public void getScrollVerticalValue(int yValue) {
-//DevUtil.e("fds","yValue"+yValue+"tabBannerLayoutTop"+tabBannerLayoutTop);
         if (yValue > tabBannerLayoutTop) {
             if (horizontalScrollView.getParent() != topFloatRelativelayout) {
                 tabLinearLayout.removeView(horizontalScrollView);
@@ -73,5 +77,10 @@ public class MainActivity extends AppCompatActivity implements ScrollViewListene
             tabBannerLayoutTop = bannerview.getBottom();//获取bannerlayout的底部位置
 
         }
+    }
+
+    @Override
+    public void onItemClick(int position,String url) {
+        Toast.makeText(this,"你点击了第"+position+"个图片"+"\r\n+ 跳转地址是"+url,Toast.LENGTH_SHORT).show();
     }
 }

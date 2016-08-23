@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -76,6 +77,7 @@ public class ImageViewpagerView extends RelativeLayout {
         }
     };
     private boolean isBanner = true;
+    private List<String> jumpUrls;
 
     public ImageViewpagerView(Context context) {
         this(context, null);
@@ -180,10 +182,12 @@ public class ImageViewpagerView extends RelativeLayout {
      *
      * @param urls
      */
-    public void setImagesUrl(List<String> urls) {
+    public void setImagesUrl(List<String> urls,List<String> jumpUrls) {
         //加载网络图片
         mIsImageUrl = true;
         this.mImageUrls = urls;
+        this.jumpUrls = jumpUrls;
+
         if (urls.size() <= 1) {
             mIsOneImg = true;
             setPointsIsVisible(false);
@@ -326,7 +330,7 @@ public class ImageViewpagerView extends RelativeLayout {
                 @Override
                 public void onClick(View view) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(toRealPosition(position));
+                        mOnItemClickListener.onItemClick(toRealPosition(position), jumpUrls.get(toRealPosition(position)));
                     }
                 }
             });
@@ -423,6 +427,6 @@ public class ImageViewpagerView extends RelativeLayout {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(int position,String url);
     }
 }
