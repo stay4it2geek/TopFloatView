@@ -58,7 +58,7 @@ android:text="可以纵向滚动的滚动控件  \r\n包含了网络加载的ban
         android:id="@+id/topfloatLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_topfloat_height"
-        android:background="@color/colorAccent"
+        android:background="#d4f5F4"
         android:orientation="horizontal"
         android:visibility="invisible">
 
